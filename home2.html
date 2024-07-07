@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marugua Hospital</title>
+    <link rel="stylesheet" href="asset.css">
+    <link rel="stylesheet" href="repo.css">
+    <!-- Include jQuery and DataTables CSS/JS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            /* Use flexbox for the main layout */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            /* Full width */
+        }
+
+        .sidebar {
+            font-size: 15px;
+            width: 50px;
+            /* Reduced width for icons only */
+            background-color: grey;
+            color: white;
+            padding: 15px;
+            overflow: hidden;
+            /* Hide overflowing content */
+            transition: width 0.3s;
+            /* Smooth width transition */
+        }
+
+        .sidebar:hover {
+            width: 200px;
+            /* Expanded width on hover */
+        }
+
+        .main-content {
+            flex: 1;
+            width: 80%;
+            padding: 20px;
+            transition: margin-left 0.3s;
+            /* Smooth transition for margin-left */
+        }
+
+        .section {
+            margin-bottom: 20px;
+            position: relative;
+            /* Ensure proper positioning of dropdown */
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .section h2 img {
+            width: 30px;
+            /* Larger icon size */
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .section h2 span {
+            display: none;
+            /* Hide text initially */
+        }
+
+        .section h2:hover span {
+            display: inline-block;
+            /* Show text on hover */
+        }
+
+        .section h2 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .section h2 a:hover {
+            color: coral;
+        }
+
+        .asset-dropdown {
+            display: none;
+            background-color: #555;
+            padding: 10px;
+            list-style-type: none;
+            position: absolute;
+            width: 200px;
+            z-index: 1;
+            margin-top: -10px;
+        }
+
+        .asset-dropdown li {
+            margin-bottom: 5px;
+            display: block;
+            /* Display list items as block */
+        }
+
+        .asset-dropdown li a {
+            padding: 5px;
+            font-size: 15px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            /* Display links as block */
+        }
+
+        .asset-dropdown li a:hover {
+            color: coral;
+        }
+
+        .asset-dropdown li img {
+            width: 15px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .section.open .asset-dropdown {
+            display: block;
+        }
+
+        .container-dep {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .container-dep.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: coral;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <header style="font-size: 18px; letter-spacing: 1px; margin-bottom: 10px;">MARAGUA</header>
+            <div class="section open">
+                <h2><img src="./icons/home.png" alt="Dashboard"><span>Dashboard</span></h2>
+            </div>
+            <div class="section">
+                <h2 class="arrow"><img src="./icons/asset.png" alt="Asset"><span>Asset Management</span></h2>
+                <ul class="asset-dropdown">
+                    <li><img src="./icons/id-card.png" alt="Asset History Image"><a href="asset_categories.html" class="load-content">Asset Sub Categories</a></li>
+                    <li><img src="./icons/history.png" alt="Asset History Image"><a href="#" class="load-content">Asset History</a></li>
+                    <li><img src="./icons/signal.png" alt="Asset Status"><a href="status.php" class="load-content">Asset Status</a></li>
+                    <li><img src="./icons/faulty.png" alt="Faulty Asset"><a href="faulty_fetch.php" class="load-content">Faulty Asset</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2 class="arrow"><img src="./icons/team.png" alt="Manage Employee"><span>Employee Management</span></h2>
+                <ul class="asset-dropdown">
+                    <li><img src="./icons/depart.png" alt="Department"><a href="department.php" class="load-content">Department</a></li>
+                    <li><img src="./icons/sub.png" alt="Sub Department"><a href="subdpt.php" class="load-content">Sub Department</a></li>
+                    <li><img src="./icons/man.png" alt="Employee"><a href="employee.php" class="load-content">Employee</a></li>
+                </ul>
+            </div>
+            <div class="section open">
+                <h2><img src="./icons/report.png" alt="Report"><span>Reports</span></h2>
+            </div>
+        </div>
+        <div class="main-content" id="main-content">
+            <h1>Welcome to Your Modern Webpage</h1>
+            <p>This is the main content area. You can put any content here.</p>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.section').forEach(section => {
+                const h2 = section.querySelector('h2');
+                const dropdown = section.querySelector('.asset-dropdown');
+
+                h2.addEventListener('mouseenter', () => {
+                    dropdown.style.display = 'block';
+                });
+
+                section.addEventListener('mouseleave', () => {
+                    dropdown.style.display = 'none';
+                });
+
+                h2.addEventListener('click', () => {
+                    section.classList.toggle('open');
+                });
+            });
+
+            document.querySelectorAll('.load-content').forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    let url = this.getAttribute('href');
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            const newContent = doc.querySelector('.main-content') ? doc.querySelector('.main-content').innerHTML : doc.body.innerHTML;
+                            document.querySelector('.main-content').innerHTML = newContent;
+
+                            // Initialize AOS
+                            AOS.init();
+
+                            // Initialize DataTables
+                            if (document.querySelector('#staffTable')) {
+                                $('#staffTable').DataTable({
+                                    "paging": true,
+                                    "searching": true,
+                                    "info": true,
+                                    "autoWidth": false
+                                });
+                            }
+
+                            // Initialize DataTables
+                            if (document.querySelector('#assetTable')) {
+                                $('#assetTable').DataTable({
+                                    "paging": true,
+                                    "searching": true,
+                                    "info": true,
+                                    "autoWidth": false
+                                });
+                            }
+
+                            // Make the new content visible
+                            if (document.querySelector('.container-dep')) {
+                                $(window).on('load', function () {
+                                    $('.container-dep').addClass('visible');
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error loading content:', error);
+                            document.querySelector('.main-content').innerHTML = '<h1>Error</h1><p>Failed to load content. Please try again later.</p>';
+                        });
+                });
+            });
+
+            // Add hover effect to shift main content
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+
+            sidebar.addEventListener('mouseenter', () => {
+                mainContent.style.marginLeft = '10px'; // Adjust the value based on the expanded width
+            });
+
+            sidebar.addEventListener('mouseleave', () => {
+                mainContent.style.marginLeft = '0'; // Reset to original position
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maragua - Home</title>
+    <style>
+        body {
+            /* background-image: url('./photo/background.jpg'); */
+            
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header styles */
+        header {
+            /* background-image: url('./photo/background.jpg'); */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: coral; /* Adjust text color for better visibility */
+            text-align: center;
+        }
+
+        header h1 {
+            background-image: url('./photo/background.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            font-size: 2.5rem;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px 0;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: coral;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            width: 300px;
+            max-width: 80%;
+        }
+
+        .popup label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .popup input[type="text"],
+        .popup input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .popup input[type="submit"] {
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .popup input[type="submit"]:hover {
+            background-color: #005ea2;
+        }
+
+        .popup .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .popup .close:hover {
+            color: #555;
+        }
+
+        .forgot-password {
+            color: #0078d4;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .remember-me {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .signup-link {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .team-member {
+            text-align: center;
+            max-width: 200px;
+            margin: 0 20px 30px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        .team-member h3 {
+            color: #0078d4;
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#loginPopup" onclick="togglePopup()" style="float: right; margin-right: 40px;">Login</a></li>
+            </ul>
+        </nav>
+        <h1 style="font-size: 70px;">SAS ICT MANAGEMENT SYSTEM</h1>
+        <!-- Popup login form -->
+        <div id="loginPopup" class="popup">
+            <span class="close" onclick="togglePopup()">&times;</span>
+            <form action="login.php" method="post">
+                <label for="username">Username or Email:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Login">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+            </form>
+            <div class="signup-link">
+                Don't have an account? <a href="./signup.html">Create an Account</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <!-- Your services content here -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat suscipit metus, ut dignissim velit maximus et.</p>
+    </section>
+
+    <!-- Team section -->
+    <section id="team" class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="./photo/Co-founder & CTO.avif" alt="Co-founder & CEO">
+                <h3>Claus Mickelson</h3>
+                <p>Co-founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="./photo/Chief Digital Officer.avif" alt="Co-founder & CEO">
+                <h3>Berry Allan</h3>
+                <p>Co-founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="./photo/Chief Information Officer.avif" alt="Co-founder & CEO">
+                <h3>Christine Langford</h3>
+                <p>Co-founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="./photo/Chief Marketing Officer.avif" alt="Co-founder & CEO">
+                <h3>Dyllan Minette</h3>
+                <p>Co-founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="./photo/Chief Financial Officer.avif" alt="Co-founder & CEO">
+                <h3>Stephanie Salvador</h3>
+                <p>Co-founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="./photo/Chief Privacy Officer.avif" alt="Co-founder & CEO">
+                <h3>Jane Smith</h3>
+                <p>Co-founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="./photo/Chief User Experience Officer.avif" alt="Co-founder & CEO">
+                <h3>John Doe</h3>
+                <p>Co-founder & CEO</p>
+            </div>
+            <!-- other team members -->
+        </div>
+    </section>
+
+    <!-- About Us section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <!-- Your about us content here -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat suscipit metus, ut dignissim velit maximus et.</p>
+    </section>
+
+    <!-- Contact Us section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Got questions or feedback? We'd love to hear from you! Contact us using the information below:</p>
+        <div class="contact-info">
+            <!-- contact info -->
+        </div>
+    </section>
+
+    <script>
+        // JavaScript function for popup login
+        function togglePopup() {
+            let popup = document.getElementById("loginPopup");
+            if (popup.style.display === "none") {
+                popup.style.display = "block";
+            } else {
+                popup.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

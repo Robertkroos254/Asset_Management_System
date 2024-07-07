@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select,
+        textarea,
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Asset Information</h1>
+        <form action="asset_registration.php" method="post">
+            <div class="form-group">
+                <label for="asset-type">Asset Type:</label>
+                <select id="assetType" name="assetType">
+                    <option value="">Asset Type:</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="tablet">Tablet</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="assetSerial">Asset Serial Number:</label>
+                <input type="text" id="assetSerial" name="assetSerial" required>
+            </div>
+            <div class="form-group">
+                <label for="supplier">Supplier:</label>
+                <textarea id="supplier" name="supplier" rows="3" placeholder="Enter supplier details"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date-supply">Date of Supply:</label>
+                <input type="date" id="dateSupply" name="dateSupply">
+            </div>
+            <div class="form-group">
+                <label for="asset-condition">Asset Condition:</label>
+                <textarea id="assetCondition" name="assetCondition" rows="3" placeholder="Describe asset condition"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

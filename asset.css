@@ -1,0 +1,104 @@
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      /* padding: 20px; */
+    }
+
+    .header button {
+      margin-left: 10px;
+      border-radius: 5px;
+      padding: 10px 15px; /* Reduced padding */
+      background-color: #cf4a58;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .header button:hover {
+      background-color: #f70a21;
+    }
+
+    h2 {
+      font-size: 30px; /* Reduced font size */
+      text-align: center;
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 10px; /* Reduced padding */
+    }
+
+    .subcategory {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      text-align: center;
+      width: 150px; /* Reduced container width */
+      margin-bottom: 15px; /* Reduced margin */
+    }
+
+    .subcategory img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .serialform {
+      margin-top: 15px; /* Reduced margin */
+    }
+
+    .serialform label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .serialform input[type="text"],
+    .serialform input[type="number"] {
+      width: 100%;
+      padding: 8px; /* Reduced padding */
+      margin-bottom: 8px; /* Reduced margin */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 8px; /* Reduced margin */
+    }
+
+    .input-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .serialform button {
+      width: 100%;
+      padding: 8px 0; /* Reduced padding */
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .serialform button:hover {
+      background-color: #0056b3;
+    }

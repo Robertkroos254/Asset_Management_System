@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset Subcategories</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .header button {
+      margin-left: 10px;
+      border-radius: 5px;
+      padding: 10px 15px; /* Reduced padding */
+      background-color: #cf4a58;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .header button:hover {
+      background-color: #f70a21;
+    }
+
+    h2 {
+      font-size: 30px; /* Reduced font size */
+      text-align: center;
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 10px; /* Reduced padding */
+    }
+
+    .subcategory {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      text-align: center;
+      width: 150px; /* Reduced container width */
+      margin-bottom: 15px; /* Reduced margin */
+    }
+
+    .subcategory img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .serialform {
+      margin-top: 15px; /* Reduced margin */
+    }
+
+    .serialform label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .serialform input[type="text"],
+    .serialform input[type="number"] {
+      width: 100%;
+      padding: 8px; /* Reduced padding */
+      margin-bottom: 8px; /* Reduced margin */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 8px; /* Reduced margin */
+    }
+
+    .input-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .serialform button {
+      width: 100%;
+      padding: 8px 0; /* Reduced padding */
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .serialform button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <button class="faulty" onclick="window.location='asset_registration.html'">Asset Registration</button>
+    <button class="faulty" onclick="window.location='faulty_asset.html'">Faulty Asset</button>
+  </div>
+
+  <h2>ASSET ISSUING</h2>
+  <br>
+  
+  <div class="content-container">
+    <div class="subcategory">
+      <img src="./photo/tablet.jpg" alt="Tablet">
+      <form class="serialform" action="tablet.php" method="post">
+        <div class="input-group">
+          <label for="tabletmodel">Tablet Model:</label>
+          <input type="text" id="tabletmodel" name="tabletmodel" required>
+        </div>
+        <div class="input-group">
+          <label for="tabletserial">Tablet Serial Number:</label>
+          <input type="text" id="tabletserial" name="tabletserial" required>
+        </div>
+        <div class="input-group">
+          <label for="tabletspec">Tablet Specs:</label>
+          <input type="text" id="tabletspec" name="tabletspec" required>
+        </div>
+        <div class="input-group">
+          <label for="staffNumber">Staff Number:</label>
+          <input type="number" id="staffNumber" name="staffNumber" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="subcategory">
+      <img src="./photo/laptop.jpg" alt="Laptop">
+      <form class="serialform" action="laptop.php" method="post">
+        <div class="input-group">
+          <label for="laptopmodel">Laptop Model:</label>
+          <input type="text" id="laptopmodel" name="laptopmodel" required>
+        </div>
+        <div class="input-group">
+          <label for="laptopserial">Laptop Serial Number:</label>
+          <input type="text" id="laptopserial" name="laptopserial" required>
+        </div>
+        <div class="input-group">
+          <label for="laptopspec">Laptop Specs:</label>
+          <input type="text" id="laptopspec" name="laptopspec" required>
+        </div>
+        <div class="input-group">
+          <label for="staffNumber">Staff Number:</label>
+          <input type="number" id="staffNumber" name="staffNumber" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="subcategory">
+      <img src="./photo/desktop.jpeg" width="150" height="200" alt="Desktop"> <!-- Adjusted image dimensions -->
+      <form class="serialform" action="desktop.php" method="post">
+        <div class="input-group">
+          <label for="desktopmodel">Desktop Model:</label>
+          <input type="text" id="desktopmodel" name="desktopmodel" required>
+        </div>
+        <div class="input-group">
+          <label for="desktopserial">Desktop Serial Number:</label>
+          <input type="text" id="desktopserial" name="desktopserial" required>
+        </div>
+        <div class="input-group">
+          <label for="desktopspec">Desktop Specs:</label>
+          <input type="text" id="desktopspec" name="desktopspec" required>
+        </div>
+        <div class="input-group">
+          <label for="staffNumber">Staff Number:</label>
+          <input type="number" id="staffNumber" name="staffNumber" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="subcategory">
+      <img src="./photo/desktop.jpeg" width="150" height="200" alt="Desktop"> <!-- Adjusted image dimensions -->
+      <form class="serialform" action="other_asset.php" method="post">
+        <div class="input-group">
+          <label for="desktopmodel">Asset Model:</label>
+          <input type="text" id="assetmodel" name="assetmodel" required>
+        </div>
+        <div class="input-group">
+          <label for="assetserial">Asset Serial Number:</label>
+          <input type="text" id="assetserial" name="assetserial" required>
+        </div>
+        <div class="input-group">
+          <label for="desktopspec">Asset Specs:</label>
+          <input type="text" id="assetspec" name="assetspec" required>
+        </div>
+        <div class="input-group">
+          <label for="staffNumber">Staff Number:</label>
+          <input type="number" id="staffNumber" name="staffNumber" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    
+  </div>
+</body>
+</html>

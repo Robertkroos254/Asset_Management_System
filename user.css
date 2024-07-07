@@ -1,0 +1,122 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f2f5;
+        }
+
+        .con {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-sign,
+        .form-row {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #007bff;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-row .form-sign {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-row .form-sign:last-child {
+            margin-right: 0;
+        }
+
+        .radio-sign {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .radio-sign label {
+            background: #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.3s;
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .radio-sign input {
+            display: none;
+        }
+
+        .radio-sign input:checked + label {
+            background: #007bff;
+            color: white;
+        }
+
+        .radio-sign label:last-child {
+            margin-right: 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
